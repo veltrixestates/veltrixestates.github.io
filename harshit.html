@@ -1,0 +1,2529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VELTRIX ESTATES | Premium Real Estate</title>
+
+<meta name="description"
+content="Veltrix Estates - Premium homes, villas, land and investment properties in Himachal Pradesh.">
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#020913;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav{
+    height:82px;
+    padding:0 5%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:#020913;
+    border-bottom:1px solid rgba(35,156,255,.25);
+
+    position:sticky;
+    top:0;
+    z-index:9999;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:58px;
+    height:58px;
+    flex-shrink:0;
+}
+
+.logo svg{
+    width:100%;
+    height:100%;
+}
+
+.brand-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.brand-name{
+    font-family:Georgia,serif;
+    font-size:28px;
+    font-weight:bold;
+    letter-spacing:5px;
+}
+
+.brand-sub{
+    color:#159cff;
+    font-size:9px;
+    font-weight:bold;
+    letter-spacing:6px;
+    margin-top:6px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:40px;
+}
+
+.nav-links a{
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
+    padding:30px 0 25px;
+    position:relative;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#159cff;
+}
+
+.nav-links a.active:after{
+    content:"";
+    position:absolute;
+    bottom:14px;
+    left:0;
+    right:0;
+    height:4px;
+    background:#159cff;
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    height:calc(100vh - 82px);
+    min-height:620px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(8,55,105,.55) 0%,
+            rgba(3,25,52,.45) 30%,
+            transparent 58%
+        ),
+        linear-gradient(
+            135deg,
+            #020812 0%,
+            #031226 48%,
+            #020b18 100%
+        );
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            ellipse at 78% 48%,
+            rgba(21,156,255,.12),
+            transparent 48%
+        );
+
+    z-index:0;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2,8,18,.45),
+            transparent 65%
+        );
+
+    z-index:1;
+}
+
+.hero-glow{
+    position:absolute;
+
+    z-index:2;
+
+    width:2px;
+    height:1200px;
+
+    right:19%;
+    top:-250px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(21,156,255,.15) 20%,
+            #159cff 48%,
+            rgba(21,156,255,.9) 55%,
+            transparent 85%
+        );
+
+    transform:rotate(38deg);
+
+    box-shadow:
+        0 0 8px #159cff,
+        0 0 22px rgba(21,156,255,.8),
+        0 0 55px rgba(21,156,255,.35);
+
+    opacity:.9;
+}
+
+.hero-glow:after{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:100%;
+
+    left:-90px;
+    top:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(21,156,255,.08),
+            transparent
+        );
+
+    filter:blur(20px);
+}
+
+.hero-content{
+    position:absolute;
+
+    z-index:3;
+
+    left:7%;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:min(760px,86%);
+}
+
+.hero-small{
+    color:#d5dbe2;
+
+    font-size:11px;
+    font-weight:bold;
+
+    letter-spacing:6px;
+
+    margin-bottom:24px;
+}
+
+.hero h1{
+    font-family:Georgia, "Times New Roman", serif;
+
+    font-size:clamp(50px,6.4vw,88px);
+
+    line-height:.98;
+
+    font-weight:normal;
+
+    letter-spacing:-2px;
+}
+
+.hero h1 span{
+    color:#159cff;
+    font-style:italic;
+}
+
+.hero p{
+    max-width:560px;
+
+    color:#d4d8dd;
+
+    font-size:17px;
+    line-height:1.7;
+
+    margin:30px 0 34px;
+}
+
+.hero-btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-width:245px;
+    height:58px;
+
+    border:1px solid #fff;
+
+    font-size:11px;
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    transition:.35s;
+}
+
+.hero-btn:hover{
+    background:#159cff;
+    border-color:#159cff;
+    color:#000;
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+
+    background:#020b16;
+
+    border-top:1px solid rgba(21,156,255,.25);
+    border-bottom:1px solid rgba(21,156,255,.25);
+}
+
+.service{
+    min-height:150px;
+
+    padding:30px 18px;
+
+    text-align:center;
+
+    border-right:1px solid #263442;
+
+    transition:.3s;
+}
+
+.service:last-child{
+    border-right:0;
+}
+
+.service:hover{
+    background:#061526;
+}
+
+.service-icon{
+    width:48px;
+    height:48px;
+
+    margin:0 auto 15px;
+
+    border:1px solid #159cff;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#159cff;
+
+    font-size:20px;
+
+    transition:.3s;
+}
+
+.service:hover .service-icon{
+    background:#159cff;
+    color:#000;
+
+    transform:translateY(-4px);
+}
+
+.service h3{
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    margin-bottom:9px;
+}
+
+.service p{
+    color:#8e9aa8;
+
+    font-size:11px;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+section{
+    padding:95px 7%;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:42px;
+}
+
+.heading-small{
+    color:#159cff;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:5px;
+}
+
+.heading h2{
+    font-family:Georgia,serif;
+
+    font-size:48px;
+
+    font-weight:normal;
+
+    margin-top:12px;
+}
+
+
+/* =========================================================
+   PROPERTIES
+========================================================= */
+
+#properties{
+    background:
+        radial-gradient(
+            circle at top,
+            #09203a 0,
+            #020913 45%
+        );
+}
+
+.properties{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:22px;
+
+    max-width:1250px;
+
+    margin:auto;
+}
+
+.property-card{
+    background:#07111d;
+
+    border:1px solid #243444;
+
+    overflow:hidden;
+
+    transition:.35s;
+}
+
+.property-card:hover{
+    transform:translateY(-7px);
+
+    border-color:#159cff;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35);
+}
+
+.property-image-wrap{
+    position:relative;
+
+    height:260px;
+
+    overflow:hidden;
+}
+
+.property-image{
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.property-card:hover .property-image{
+    transform:scale(1.06);
+}
+
+.property-tag{
+    position:absolute;
+
+    top:14px;
+    left:14px;
+
+    padding:7px 11px;
+
+    background:#159cff;
+
+    color:#000;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+}
+
+.property-info{
+    padding:21px;
+}
+
+.property-info h3{
+    font-family:Georgia,serif;
+
+    font-size:23px;
+
+    font-weight:normal;
+}
+
+.property-location{
+    color:#8996a4;
+
+    font-size:11px;
+
+    margin:8px 0 14px;
+}
+
+.property-details{
+    color:#c1c9d0;
+
+    font-size:11px;
+
+    padding-bottom:16px;
+
+    border-bottom:1px solid #293744;
+}
+
+.property-bottom{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding-top:16px;
+}
+
+.property-price{
+    color:#159cff;
+
+    font-size:15px;
+
+    font-weight:bold;
+}
+
+.property-button{
+    color:#ddd;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+}
+
+.property-button:hover{
+    color:#159cff;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about{
+    background:#f0f2f4;
+
+    color:#101820;
+
+    display:grid;
+
+    grid-template-columns:1.05fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.about-image-wrap{
+    position:relative;
+}
+
+.about-image{
+    height:480px;
+
+    object-fit:cover;
+}
+
+.about-image-wrap:after{
+    content:"";
+
+    position:absolute;
+
+    left:-12px;
+    top:12px;
+
+    width:100%;
+    height:100%;
+
+    border:1px solid #159cff;
+
+    z-index:0;
+}
+
+.about-image{
+    position:relative;
+
+    z-index:1;
+}
+
+.about h2{
+    font-family:Georgia,serif;
+
+    font-size:48px;
+
+    line-height:1.05;
+
+    font-weight:normal;
+
+    margin:12px 0 22px;
+}
+
+.about p{
+    color:#555e66;
+
+    line-height:1.8;
+
+    margin-bottom:16px;
+
+    max-width:570px;
+}
+
+.about-button{
+    display:inline-flex;
+
+    margin-top:12px;
+
+    background:#07111d;
+
+    color:#fff;
+
+    padding:16px 24px;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+}
+
+.about-button:hover{
+    background:#159cff;
+    color:#000;
+}
+
+
+/* =========================================================
+   LOCATIONS
+========================================================= */
+
+.locations{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+    max-width:1250px;
+
+    margin:auto;
+}
+
+.location{
+    height:350px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:1px solid #273744;
+}
+
+.location img{
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+    filter:brightness(.7);
+}
+
+.location:hover img{
+    transform:scale(1.08);
+
+    filter:brightness(.9);
+}
+
+.location:after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            transparent 30%,
+            rgba(0,0,0,.9)
+        );
+}
+
+.location-name{
+    position:absolute;
+
+    z-index:2;
+
+    left:22px;
+
+    bottom:22px;
+}
+
+.location-name h3{
+    font-family:Georgia,serif;
+
+    font-size:28px;
+
+    font-weight:normal;
+}
+
+.location-name p{
+    color:#cbd1d7;
+
+    font-size:10px;
+
+    margin-top:6px;
+}
+
+
+/* =========================================================
+   AGENT / CONSULTANT
+========================================================= */
+
+.agent-section{
+
+    padding:100px 7%;
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(21,156,255,.10),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #e9edf1 0%,
+            #f7f8f9 55%,
+            #e8edf1 100%
+        );
+
+    color:#101820;
+
+    overflow:hidden;
+}
+
+.agent-container{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1.05fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+
+/* LEFT */
+
+.agent-visual{
+
+    position:relative;
+
+    min-height:570px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d6e2ea,
+            #eef2f4
+        );
+
+    border:1px solid #ccd5dc;
+}
+
+.agent-visual:before{
+
+    content:"AGENT";
+
+    position:absolute;
+
+    left:-15px;
+
+    bottom:65px;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    font-size:clamp(90px,11vw,170px);
+
+    font-weight:900;
+
+    letter-spacing:-8px;
+
+    color:rgba(21,156,255,.10);
+
+    z-index:0;
+
+    white-space:nowrap;
+}
+
+.agent-visual:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    right:-100px;
+    bottom:-120px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,214,90,.38),
+            transparent 65%
+        );
+
+    filter:blur(10px);
+
+    z-index:0;
+}
+
+.agent-photo{
+
+    position:relative;
+
+    z-index:2;
+
+    width:72%;
+
+    max-width:410px;
+
+    height:500px;
+
+    object-fit:cover;
+
+    object-position:center top;
+
+    align-self:flex-end;
+
+    filter:saturate(.9);
+}
+
+
+/* NAME */
+
+.agent-name-card{
+
+    position:absolute;
+
+    left:25px;
+
+    bottom:28px;
+
+    z-index:4;
+
+    background:rgba(255,255,255,.93);
+
+    border:1px solid #d7dce0;
+
+    padding:14px 20px;
+
+    backdrop-filter:blur(8px);
+}
+
+.agent-name-card small{
+
+    display:block;
+
+    color:#159cff;
+
+    font-size:8px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    margin-bottom:5px;
+}
+
+.agent-name-card strong{
+
+    font-family:Georgia,serif;
+
+    font-size:18px;
+
+    font-weight:normal;
+}
+
+
+/* RIGHT */
+
+.agent-content{
+
+    position:relative;
+
+    z-index:2;
+}
+
+.agent-badges{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin-bottom:27px;
+}
+
+.agent-badge{
+
+    padding:9px 14px;
+
+    border:1px solid #c7d0d7;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.55);
+
+    color:#26323c;
+
+    font-size:9px;
+
+    letter-spacing:.3px;
+}
+
+.agent-label{
+
+    color:#159cff;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:5px;
+
+    margin-bottom:10px;
+}
+
+.agent-content h2{
+
+    font-family:Georgia,serif;
+
+    font-size:clamp(44px,5vw,70px);
+
+    line-height:.95;
+
+    font-weight:normal;
+
+    margin-bottom:8px;
+}
+
+.agent-content h2 span{
+
+    color:#159cff;
+
+    font-style:italic;
+}
+
+.agent-role{
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    color:#26313a;
+
+    margin-bottom:22px;
+}
+
+.agent-description{
+
+    max-width:590px;
+
+    color:#58636d;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    margin-bottom:26px;
+}
+
+.agent-points{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+    margin-bottom:30px;
+}
+
+.agent-point{
+
+    padding:14px;
+
+    background:rgba(255,255,255,.7);
+
+    border-left:3px solid #159cff;
+
+    color:#303b44;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+}
+
+.agent-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:200px;
+
+    height:54px;
+
+    background:#07111d;
+
+    color:#fff;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    transition:.35s;
+}
+
+.agent-button:hover{
+
+    background:#159cff;
+
+    color:#000;
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            rgba(2,9,19,.94),
+            rgba(2,9,19,.98)
+        ),
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+}
+
+.contact h2{
+
+    font-family:Georgia,serif;
+
+    font-size:55px;
+
+    font-weight:normal;
+
+    margin-top:10px;
+}
+
+.contact p{
+
+    color:#aeb7c0;
+
+    max-width:620px;
+
+    margin:20px auto 30px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   CONTACT BUTTONS - FIXED
+========================================================= */
+
+.contact-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-top:30px;
+}
+
+.email-button,
+.whatsapp-button{
+
+    width:190px;
+
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#07111d;
+
+    color:#ffffff;
+
+    border:1px solid #ffffff;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+
+    cursor:pointer;
+}
+
+
+/* EMAIL */
+
+.email-button{
+
+    background:#07111d;
+
+    color:#ffffff;
+
+    border:1px solid #ffffff;
+}
+
+
+/* WHATSAPP */
+
+.whatsapp-button{
+
+    background:#07111d;
+
+    color:#ffffff;
+
+    border:1px solid #ffffff;
+}
+
+
+/* HOVER */
+
+.email-button:hover,
+.whatsapp-button:hover{
+
+    background:#159cff;
+
+    color:#000;
+
+    border-color:#159cff;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(21,156,255,.25);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:35px 7%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    border-top:1px solid #263442;
+
+    color:#778390;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .nav-links.mobile-open{
+
+        display:flex;
+
+        position:absolute;
+
+        top:82px;
+
+        left:0;
+        right:0;
+
+        padding:25px;
+
+        background:#020913;
+
+        flex-direction:column;
+
+        gap:22px;
+
+        border-bottom:1px solid #263442;
+    }
+
+    .nav-links.mobile-open a{
+        padding:0;
+    }
+
+    .nav-links.mobile-open a.active:after{
+        display:none;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .service{
+        border-right:0;
+
+        border-bottom:1px solid #263442;
+    }
+
+    .properties{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .locations{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .agent-container{
+
+        grid-template-columns:1fr;
+
+        gap:45px;
+    }
+
+    .agent-visual{
+
+        min-height:520px;
+    }
+
+    .agent-photo{
+
+        width:55%;
+
+        height:480px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    nav{
+
+        height:72px;
+
+        padding:0 5%;
+    }
+
+    .logo{
+
+        width:45px;
+        height:45px;
+    }
+
+    .brand-name{
+
+        font-size:19px;
+
+        letter-spacing:3px;
+    }
+
+    .brand-sub{
+
+        font-size:7px;
+
+        letter-spacing:4px;
+    }
+
+    .hero{
+
+        height:calc(100vh - 72px);
+
+        min-height:650px;
+    }
+
+    .hero-content{
+
+        left:7%;
+
+        width:86%;
+    }
+
+    .hero-small{
+
+        font-size:8px;
+
+        letter-spacing:4px;
+    }
+
+    .hero h1{
+
+        font-size:48px;
+
+        letter-spacing:-1px;
+    }
+
+    .hero p{
+
+        font-size:14px;
+
+        line-height:1.6;
+    }
+
+    .hero-glow{
+
+        right:2%;
+
+        opacity:.7;
+    }
+
+    section{
+
+        padding:75px 6%;
+    }
+
+    .heading h2{
+
+        font-size:38px;
+    }
+
+    .properties{
+
+        grid-template-columns:1fr;
+    }
+
+    .property-image-wrap{
+
+        height:240px;
+    }
+
+    .locations{
+
+        grid-template-columns:1fr;
+    }
+
+    .location{
+
+        height:300px;
+    }
+
+    .about h2{
+
+        font-size:40px;
+    }
+
+    .about-image{
+
+        height:350px;
+    }
+
+
+    /* AGENT MOBILE */
+
+    .agent-section{
+
+        padding:70px 6%;
+    }
+
+    .agent-container{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+    }
+
+    .agent-visual{
+
+        min-height:470px;
+
+        order:1;
+    }
+
+    .agent-photo{
+
+        width:70%;
+
+        height:430px;
+    }
+
+    .agent-visual:before{
+
+        font-size:82px;
+
+        bottom:70px;
+
+        letter-spacing:-5px;
+    }
+
+    .agent-name-card{
+
+        left:15px;
+
+        bottom:18px;
+
+        padding:11px 15px;
+    }
+
+    .agent-name-card strong{
+
+        font-size:15px;
+    }
+
+    .agent-content{
+
+        order:2;
+    }
+
+    .agent-badges{
+
+        gap:7px;
+    }
+
+    .agent-badge{
+
+        font-size:8px;
+
+        padding:8px 11px;
+    }
+
+    .agent-content h2{
+
+        font-size:48px;
+    }
+
+    .agent-role{
+
+        font-size:11px;
+
+        letter-spacing:2px;
+    }
+
+    .agent-description{
+
+        font-size:13px;
+
+        line-height:1.7;
+    }
+
+    .agent-points{
+
+        grid-template-columns:1fr;
+    }
+
+    .agent-button{
+
+        width:100%;
+    }
+
+
+    /* CONTACT MOBILE */
+
+    .contact h2{
+
+        font-size:42px;
+    }
+
+    .contact-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:14px;
+    }
+
+    .email-button,
+    .whatsapp-button{
+
+        width:220px;
+
+        height:58px;
+    }
+
+    footer{
+
+        display:block;
+
+        line-height:1.8;
+    }
+
+    footer div{
+
+        margin:8px 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav>
+
+<a href="#home" class="brand">
+
+<div class="logo">
+
+<svg viewBox="0 0 100 100"
+xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+
+<linearGradient id="logoGradient"
+x1="0%" y1="0%"
+x2="100%" y2="100%">
+
+<stop offset="0%" stop-color="#ffffff"/>
+<stop offset="50%" stop-color="#38bfff"/>
+<stop offset="100%" stop-color="#0075d4"/>
+
+</linearGradient>
+
+</defs>
+
+<g fill="url(#logoGradient)">
+
+<path d="M30 70V30L41 20V70Z"/>
+<path d="M44 70V36L55 27V70Z"/>
+<path d="M58 70V43L68 35V70Z"/>
+<path d="M71 70V50L79 43V70Z"/>
+
+</g>
+
+<g fill="#fff">
+
+<rect x="34" y="35" width="3" height="3"/>
+<rect x="34" y="44" width="3" height="3"/>
+<rect x="34" y="53" width="3" height="3"/>
+
+<rect x="48" y="40" width="3" height="3"/>
+<rect x="48" y="49" width="3" height="3"/>
+
+<rect x="62" y="48" width="3" height="3"/>
+<rect x="62" y="56" width="3" height="3"/>
+
+</g>
+
+<path d="M17 73 Q50 60 83 73"
+fill="none"
+stroke="#159cff"
+stroke-width="3"
+stroke-linecap="round"/>
+
+</svg>
+
+</div>
+
+
+<div class="brand-text">
+
+<div class="brand-name">
+VELTRIX
+</div>
+
+<div class="brand-sub">
+ESTATES
+</div>
+
+</div>
+
+</a>
+
+
+<div class="nav-links" id="navLinks">
+
+<a href="#home" class="active">HOME</a>
+
+<a href="#properties">PROPERTIES</a>
+
+<a href="#locations">LOCATIONS</a>
+
+<a href="#about">ABOUT</a>
+
+<a href="#contact">CONTACT</a>
+
+</div>
+
+
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
+
+</nav>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero" id="home">
+
+<div class="hero-glow"></div>
+
+<div class="hero-content">
+
+<div class="hero-small">
+MORE THAN JUST A HOME
+</div>
+
+<h1>
+
+Find Your<br>
+
+Perfect <span>Property</span>
+
+</h1>
+
+<p>
+
+Premium homes, prime locations and smart investments —
+all in one place.
+
+</p>
+
+<a href="#properties" class="hero-btn">
+
+EXPLORE PROPERTIES →
+
+</a>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<div class="services">
+
+<div class="service">
+
+<div class="service-icon">⌂</div>
+
+<h3>RESIDENTIAL</h3>
+
+<p>
+Modern homes for a better tomorrow
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">▥</div>
+
+<h3>COMMERCIAL</h3>
+
+<p>
+Spaces that grow your business
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">⌁</div>
+
+<h3>LAND & PLOTS</h3>
+
+<p>
+Invest in your future
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">◇</div>
+
+<h3>VILLAS</h3>
+
+<p>
+Exclusive living and extraordinary views
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">↗</div>
+
+<h3>INVESTMENT</h3>
+
+<p>
+Smart choices for long-term value
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================================
+     PROPERTIES
+========================================================= -->
+
+<section id="properties">
+
+<div class="heading">
+
+<div class="heading-small">
+FEATURED COLLECTION
+</div>
+
+<h2>
+Properties For Sale
+</h2>
+
+</div>
+
+
+<div class="properties">
+
+
+<article class="property-card">
+
+<div class="property-image-wrap">
+
+<img
+class="property-image"
+src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+alt="Mountain View Villa">
+
+<div class="property-tag">
+FEATURED
+</div>
+
+</div>
+
+<div class="property-info">
+
+<h3>
+Mountain View Villa
+</h3>
+
+<div class="property-location">
+Shimla, Himachal Pradesh
+</div>
+
+<div class="property-details">
+4 Beds • 4 Baths • Mountain View
+</div>
+
+<div class="property-bottom">
+
+<span class="property-price">
+₹3.85 Cr*
+</span>
+
+<a href="#contact" class="property-button">
+VIEW PROPERTY →
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<article class="property-card">
+
+<div class="property-image-wrap">
+
+<img
+class="property-image"
+src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+alt="Himalayan Estate">
+
+<div class="property-tag">
+PREMIUM
+</div>
+
+</div>
+
+<div class="property-info">
+
+<h3>
+Himalayan Estate
+</h3>
+
+<div class="property-location">
+Manali, Himachal Pradesh
+</div>
+
+<div class="property-details">
+5 Beds • Private Estate • Valley View
+</div>
+
+<div class="property-bottom">
+
+<span class="property-price">
+₹5.25 Cr*
+</span>
+
+<a href="#contact" class="property-button">
+VIEW PROPERTY →
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<article class="property-card">
+
+<div class="property-image-wrap">
+
+<img
+class="property-image"
+src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
+alt="Kasauli Residence">
+
+<div class="property-tag">
+RESIDENCE
+</div>
+
+</div>
+
+<div class="property-info">
+
+<h3>
+Kasauli Residence
+</h3>
+
+<div class="property-location">
+Kasauli, Himachal Pradesh
+</div>
+
+<div class="property-details">
+4 Beds • 3 Baths • Pine View
+</div>
+
+<div class="property-bottom">
+
+<span class="property-price">
+₹4.40 Cr*
+</span>
+
+<a href="#contact" class="property-button">
+VIEW PROPERTY →
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<article class="property-card">
+
+<div class="property-image-wrap">
+
+<img
+class="property-image"
+src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=85"
+alt="Shimla Manor">
+
+</div>
+
+<div class="property-info">
+
+<h3>
+Shimla Manor
+</h3>
+
+<div class="property-location">
+Shimla, Himachal Pradesh
+</div>
+
+<div class="property-details">
+4 Beds • Garden • Fireplace
+</div>
+
+<div class="property-bottom">
+
+<span class="property-price">
+₹4.95 Cr*
+</span>
+
+<a href="#contact" class="property-button">
+VIEW PROPERTY →
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<article class="property-card">
+
+<div class="property-image-wrap">
+
+<img
+class="property-image"
+src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
+alt="Wisteria Villa">
+
+</div>
+
+<div class="property-info">
+
+<h3>
+Wisteria Villa
+</h3>
+
+<div class="property-location">
+Manali, Himachal Pradesh
+</div>
+
+<div class="property-details">
+5 Beds • 5 Baths • Garden
+</div>
+
+<div class="property-bottom">
+
+<span class="property-price">
+₹6.10 Cr*
+</span>
+
+<a href="#contact" class="property-button">
+VIEW PROPERTY →
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<article class="property-card">
+
+<div class="property-image-wrap">
+
+<img
+class="property-image"
+src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85"
+alt="Cedar Heights">
+
+</div>
+
+<div class="property-info">
+
+<h3>
+Cedar Heights
+</h3>
+
+<div class="property-location">
+Solan, Himachal Pradesh
+</div>
+
+<div class="property-details">
+3 Beds • 3 Baths • Mountain View
+</div>
+
+<div class="property-bottom">
+
+<span class="property-price">
+₹2.95 Cr*
+</span>
+
+<a href="#contact" class="property-button">
+VIEW PROPERTY →
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="about" id="about">
+
+<div class="about-image-wrap">
+
+<img
+class="about-image"
+src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85"
+alt="Veltrix luxury property">
+
+</div>
+
+
+<div>
+
+<div class="heading-small">
+ABOUT VELTRIX
+</div>
+
+<h2>
+Property, With A Higher Standard.
+</h2>
+
+<p>
+We connect buyers with exceptional homes, villas, land and
+investment opportunities in some of Himachal Pradesh's most
+desirable locations.
+</p>
+
+<p>
+Our focus is simple: premium properties, transparent guidance
+and long-term value.
+</p>
+
+<a href="#contact" class="about-button">
+TALK TO OUR TEAM →
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     LOCATIONS
+========================================================= -->
+
+<section id="locations">
+
+<div class="heading">
+
+<div class="heading-small">
+EXPLORE DESTINATIONS
+</div>
+
+<h2>
+Prime Locations
+</h2>
+
+</div>
+
+
+<div class="locations">
+
+
+<div class="location">
+
+<img
+src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85"
+alt="Shimla">
+
+<div class="location-name">
+
+<h3>Shimla</h3>
+
+<p>
+Mountain living & premium homes
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="location">
+
+<img
+src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=85"
+alt="Manali">
+
+<div class="location-name">
+
+<h3>Manali</h3>
+
+<p>
+Valley views & luxury estates
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="location">
+
+<img
+src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85"
+alt="Kasauli">
+
+<div class="location-name">
+
+<h3>Kasauli</h3>
+
+<p>
+Quiet retreats & pine forests
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="location">
+
+<img
+src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85"
+alt="Solan">
+
+<div class="location-name">
+
+<h3>Solan</h3>
+
+<p>
+Growth corridors & investments
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     AGENT / PROPERTY CONSULTANT
+========================================================= -->
+
+<section class="agent-section" id="agent">
+
+<div class="agent-container">
+
+
+<div class="agent-visual">
+
+<img
+class="agent-photo"
+src=""
+alt="Veltrix Property Consultant">
+
+<div class="agent-name-card">
+
+<small>
+VELTRIX ESTATES
+</small>
+
+<strong>
+[Harshit Thakur]
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="agent-content">
+
+
+<div class="agent-badges">
+
+<span class="agent-badge">
+Local Property Knowledge
+</span>
+
+<span class="agent-badge">
+Transparent Guidance
+</span>
+
+<span class="agent-badge">
+Personal Service
+</span>
+
+<span class="agent-badge">
+Property Consultation
+</span>
+
+</div>
+
+
+<div class="agent-label">
+MEET YOUR PROPERTY CONSULTANT
+</div>
+
+
+<h2>
+I'M <span>[Harshit Thakur]</span>
+</h2>
+
+
+<div class="agent-role">
+REAL ESTATE CONSULTANT
+</div>
+
+
+<p class="agent-description">
+
+Helping clients discover premium homes, villas, land and
+investment opportunities across Himachal Pradesh with a
+clear, transparent and client-focused approach.
+
+Whether you're searching for a home, planning an investment,
+or exploring property in the hills, Veltrix Estates is here
+to help you make an informed property decision.
+
+</p>
+
+
+<div class="agent-points">
+
+<div class="agent-point">
+✓ LOCAL MARKET GUIDANCE
+</div>
+
+<div class="agent-point">
+✓ PERSONAL PROPERTY ASSISTANCE
+</div>
+
+<div class="agent-point">
+✓ RESIDENTIAL & VILLA OPTIONS
+</div>
+
+<div class="agent-point">
+✓ LAND & INVESTMENT OPPORTUNITIES
+</div>
+
+</div>
+
+
+<a href="#contact" class="agent-button">
+LEARN MORE →
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="contact" id="contact">
+
+<div class="heading-small">
+LET'S FIND YOUR NEXT ADDRESS
+</div>
+
+<h2>
+Make Your Move.
+</h2>
+
+<p>
+Tell us what you're looking for and our property team will help
+you discover the right opportunity.
+</p>
+
+
+<div class="contact-buttons">
+
+
+<!-- EMAIL BUTTON -->
+
+<a
+href="mailto:veltrixestates@gmail.com"
+target="_blank"
+rel="noopener noreferrer"
+class="email-button">
+
+EMAIL US
+
+</a>
+
+
+<!-- WHATSAPP BUTTON -->
+
+<a
+href="https://wa.me/917876190135"
+target="_blank"
+rel="noopener noreferrer"
+class="whatsapp-button">
+
+WHATSAPP →
+
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+<div>
+© 2026 VELTRIX ESTATES
+</div>
+
+<div>
+PREMIUM REAL ESTATE • HIMACHAL PRADESH
+</div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+function toggleMenu(){
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+    navLinks.classList.toggle("mobile-open");
+
+}
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+        .getElementById("navLinks")
+        .classList.remove("mobile-open");
+
+    });
+
+});
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+        .querySelectorAll(".nav-links a")
+        .forEach(function(item){
+
+            item.classList.remove("active");
+
+        });
+
+        this.classList.add("active");
+
+    });
+
+});
+
+</script>
+
+
+</body>
+
+</html>
